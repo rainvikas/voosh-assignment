@@ -12,6 +12,7 @@ router.post("/createitem", itemController.createItem)
 
 router.post("/add-order/:userId", mid.authentication, orderController.createOrder)
 router.get("/get-order/:userId", mid.authentication, mid.authorization, orderController.getOrders)
+router.get("/get-orders", orderController.getAllOrders)
 
 
 module.exports = router;

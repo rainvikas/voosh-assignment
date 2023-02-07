@@ -79,5 +79,19 @@ const getOrders = async function (req, res) {
 }
 
 
+const getAllOrders = async function (req, res) {
+    try {
+        
+        let getAllOrders = await orderModel.find()
+        res.send(getAllOrders)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            msg: error.message
+        })
+    }
+}
 
-module.exports = { createOrder, getOrders }
+
+
+module.exports = { createOrder, getOrders, getAllOrders }
